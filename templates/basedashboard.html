@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Stacks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='{% static "/css/basedashboard.css" %}' rel="stylesheet">
+	{% block style %}
+	{% endblock %}
+    </head>
+    <body>
+    <header>
+        <nav id="nav">
+            <ul class='topNav'>
+		    <a href="{% url 'dashboard' %}">
+            <li id="home"><svg xmlns="http://www.w3.org/2000/svg" 
+                width="32.166" height="30.154" viewBox="0 0 32.166 30.154" class="browserSVG">
+                <defs>
+                </defs><g transform="translate(0 -16.017)">
+                <path class="browsera" 
+                d="M64.25,211.063H42.89a2.893,2.893,0,0,1-2.89-2.89v-15.2a1.005,
+                1.005,0,1,1,2.01,0v15.2a.881.881,0,0,0,.88.88H64.25a.881.881,0,0,0,
+                .88-.88v-15.2a1.005,1.005,0,1,1,2.01,0v15.2A2.893,2.893,0,0,1,64.25,211.063Z" 
+                transform="translate(-37.487 -164.892)"/>
+                <path class="browsera"
+                d="M31.161,31.594a1,1,0,0,
+                1-.711-.294l-12.5-12.5a2.642,2.642,0,
+                0,0-3.732,0L1.716,31.3A1.005,1.005,0,0,1,
+                .295,29.878l12.5-12.5a4.654,4.654,0,0,1,
+                6.575,0l12.5,12.5a1.005,1.005,0,0,1-.711,1.716Z"/>
+                <path class="browsera" 
+                d="M185.047,301.05h-8.042A1,1,0,0,1,
+                176,300.045v-8.921a3.145,3.145,0,0,1,
+                3.141-3.141h3.769a3.145,3.145,0,0,1,3.141,3.141v8.921A1,
+                1,0,0,1,185.047,301.05Zm-7.036-2.01h6.031v-7.916a1.132,
+                1.132,0,0,0-1.131-1.131h-3.769a1.132,1.132,0,0,0-1.131,1.131Z" 
+                transform="translate(-164.943 -254.88)"/></g></svg>
+            </li>
+		</a>
+		    <a href="{% url 'stats' %}">
+            <li id="cards">
+                <svg xmlns="http://www.w3.org/2000/svg" width="34.953" 
+                height="26.802" viewBox="0 0 34.953 26.802" class="stackSVG">
+                <g transform="translate(0 -35.441)">
+                <g transform="translate(0 35.441)"><path d="M.566,43.522,17.111,
+                50.6a.914.914,0,0,0,.366.075.938.938,0,0,0,.366-.075l16.545-7.081a.931.931,
+                0,0,0-.035-1.727L17.808,35.5a.927.927,0,0,0-.662,0L.6,
+                41.795a.931.931,0,0,0-.035,1.727ZM17.477,37.37l14.058,5.347L17.477,48.734,3.419,42.716Z" 
+                transform="translate(0 -35.441)"/>
+                <path d="M.567,126.979l16.911,7.238,16.91-7.238a.932.932,
+                0,0,0-.733-1.713l-16.178,6.925L1.3,125.266a.932.932,0,1,0-.732,1.713Z" 
+                transform="translate(-0.001 -114.868)"/>
+                <path d="M.567,159.378l16.911,7.238,16.91-7.238a.931.931,0,1,
+                0-.733-1.713L17.478,164.59,1.3,157.665a.931.931,0,1,0-.732,1.713Z" 
+                transform="translate(-0.001 -143.541)"/><path d="M.567,191.781l16.911,
+                7.238,16.91-7.238a.931.931,0,0,0-.733-1.713l-16.178,6.925L1.3,190.068a.931.931,0,1,0-.732,1.713Z" 
+                transform="translate(-0.001 -172.218)"/></g></g></svg>
+            </li>
+		</a>
+		    <a href="{% url 'profile' %}">
+            <li id="settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" 
+                viewBox="0 0 23 23" class="profileSVG"><g transform="translate(0)">
+                <path d="M19.632,14.868a11.456,11.456,0,0,0-4.37-2.741,
+                6.648,6.648,0,1,0-7.523,0A11.518,11.518,0,0,0,0,23H1.8A9.7,
+                9.7,0,0,1,21.2,23H23A11.425,11.425,0,0,0,19.632,14.868ZM11.5,
+                11.5a4.852,4.852,0,1,1,4.852-4.852A4.857,4.857,0,0,1,11.5,11.5Z" 
+                transform="translate(0)"/></g></svg>
+            </li>
+		</a>
+            </ul>
+        </nav>
+        <div id="title">
+            <p id='pageTitle'>Title</p>
+        </div>
+    </header>
+    <div id="card">
+        <div id="frontWhite">
+    {% block content %}
+    {% endblock %}
+        </div> <!--frontWhite-->
+    </div> <!-- end card -->
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <script>
+
+                $(document).ready(function() {
+                    
+                    $(".profileSVG").click(function() {
+                        $(".profileSVG").css("fill",'green')
+                        window.location.replace("{% url 'account_logout' %}");
+                    })
+
+                    $(".stackSVG").click(function() {
+                        $(".stackSVG").css("fill",'red')
+                        window.location.replace("{% url 'account_logout' %}");
+                    })
+
+                    $(".browserSVG").click(function() {
+                        $(".browserSVG").css("fill",'blue')
+                        window.location.replace("{% url 'dashboard' %}");
+                    })
+			$("#pageTitle").text("Hello {{user.first_name}}");
+
+                });
+
+            </script>
+</html>

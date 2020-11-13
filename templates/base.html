@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Stacks</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='{% static "css/style.css" %}' rel="stylesheet">
+    </head>
+    <body>
+        <div id="card">
+            {% block content %}
+            {% endblock %}
+          </div> <!--card -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+            <script>
+                $(document).ready(function() {
+
+                    //scripts for homepage
+                    $(".login-button").click(
+                        function(){
+                            window.location.replace("{% url 'account_login' %}");
+                        });
+
+                    $(".register-button").click(
+                        function(){
+                            window.location.replace("{% url 'account_signup' %}");
+                        });
+
+                    //scripts for signup page
+                    $(".register-btn").click(
+                        function(){
+                            window.location.replace("{% url 'home' %}");
+                        });
+                });
+            </script>
+    </body>
+</html>

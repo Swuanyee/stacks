@@ -1,0 +1,126 @@
+body{
+    background-color: white;
+    overflow: hidden;
+    height: 100%;
+    padding-top: 7.4vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav{
+    height: 7.4vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0px 3px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.topNav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-gap: 20vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+#home, #cards, #settings{
+    display: inline;
+}
+
+
+#title{
+    position: absolute;
+    top: 7.4vh;
+    left: 0;
+    height: 7.4vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*border-bottom: 1px black;*/
+    box-shadow: 1px 0px 1px;
+}
+
+#pageTitle{
+    font-family: 'Trebuchet MS';
+    font-size: 20px;
+    color: #E85D04;
+}
+
+#card {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    top: 9vh;
+    text-align: center;
+  }
+
+
+  @media (min-width: 750px) {
+    #card {
+    position: relative;
+    top: 12vh;
+    width: 85vw;
+    height: 76vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 3px 6px;
+  }
+  }
+
+  #logout-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30vh;
+  }
+
+  #logout-btn {
+    background-color: #E85D04;
+    color: #696969;
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+    height: 51px;
+    width: 291px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    margin-top: 59px;
+    margin-bottom: 11px;
+  }
+  
+  #logout-btn:hover {
+    background-color: #faa307;
+  }
+  
+  #logout-btn:active {
+    background-color: #faa307;
+    box-shadow: 0 5px #666;
+    transform: translateY(-4px);
+  }
+
+  @media (min-width: 750px) {
+    #logout-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 5vh;
+      }
+  }
+
+
+

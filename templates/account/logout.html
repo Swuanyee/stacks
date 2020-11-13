@@ -1,0 +1,18 @@
+{% extends "basedashboard.html" %}
+{% load static %}
+{% load cards_extra %}
+{% block style %}
+ <link href='{% static "/css/logout.css" %}' rel="stylesheet">
+{% endblock %}
+{% block content %}
+<!-- logout -->
+    
+        <form id="logout-form" method='post' action="{% url 'account_logout' %}">
+            {% csrf_token %}
+          <button id="logout-btn" type="submit" value="Logout">
+              Logout
+              </button>
+          </form>
+        </div> <!--end frontWhite-->
+
+{% endblock %}

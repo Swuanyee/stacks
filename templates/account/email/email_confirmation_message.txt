@@ -1,0 +1,17 @@
+{% load account %}
+{% user_display user as user_display %}
+{% load i18n %}
+{% autoescape off %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Hello!
+
+Welcome to Shuffle by Making Sense! Before you start crushing your exam, please veirfy your email by going to the link below:
+
+{{ activate_url }}
+
+{% endblocktrans %}
+{% blocktrans with site_name=current_site.name site_domain=current_site.domain %}
+Wishing you well,
+Making Sense Learning Centre Team
+{{ site_domain }}{% endblocktrans %}
+{% endautoescape %}

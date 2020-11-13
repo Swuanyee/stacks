@@ -1,0 +1,31 @@
+{% extends "basedashboard.html" %} {% block content %} 
+<div class='deckContainer'>
+<div class='deckContainerText'>
+	<p class='deckContainerTextp'>Active Decks</p>
+</div>
+<div class='cardContainer'>
+	<ul class='deckCardsList'>
+		<li class='deckCards'>Hello</li></br>
+		<li class='deckCards'>Hello</li></br>
+	</ul>
+<!--	<div class='deckCards'>
+</div> -->
+</div>
+
+
+	<script>
+		window.addEventListener('load', (event) => {
+			console.log('yeah boi');
+			var deckCards = document.getElementsByClassName('deckCards');
+			var colorArray = ['79ADDC', 'FFC09F', 'FFEE93', 'FCF5C7', 'ADF7B6']
+			function getRandomInt(max) {
+				  return Math.floor(Math.random() * Math.floor(max));
+			};
+			rndNum = getRandomInt(colorArray.length);
+			console.log(rndNum)
+			var rndColor = "#"+colorArray[rndNum];
+			console.log(rndColor);
+			deckCards.style.backgroundColor= rndColor;
+		})
+	</script>
+{% endblock %}

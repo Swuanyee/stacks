@@ -1,0 +1,35 @@
+{% extends 'basedashboard.html' %} 
+{% load static %} 
+{% block style %}
+<link href='{% static "/css/questions.css" %}' rel="stylesheet" />
+{% endblock %} 
+{% block content %}
+<form id="form-container" enctype="multipart/form-data" action="" method="POST">
+  {% csrf_token %}
+  <div class="inputSubject">
+      <div class="deckForm">{{DeckForm}}</div>
+  </div>
+
+  <div class="deckBuilder">
+    <div class="builderText">
+      <p class="para">Deck Builder</p>
+    </div>
+    <div class="cardForm" id="cardForm">
+      {{CardsFormset.management_form}}
+      {% for CardsForm in CardsFormset %}
+      <div class="oneForm" id="oneForm">{{CardsForm}}</div>
+      {% endfor %}
+    </div>
+    <div class="buttons">
+    <div class="submitBtn">
+      <input type="submit" value="Submit" id="submit" />
+    </div>
+    </div> <!-- end of buttons -->
+  </div> <!-- end of deckBuilder -->
+</form>
+
+<script>
+var user_profile = "{{user_profile}}"
+</script>
+<script src='{% static "/js/questions.js" %}'></script>
+{% endblock %}

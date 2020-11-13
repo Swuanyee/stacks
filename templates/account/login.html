@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="frontWhite">
+    <form id="login-form" method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}" />
+      <input id="login-btn" type="submit" value="Login"><br>
+        <a class="troubleLogin" href="{% url 'account_reset_password' %}">Trouble logging in?</a>
+      </form>
+    </div>
+    <input type="hidden" name="next" value="{{next}}" />>
+{% endblock %}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+width="63.94" height="63.939" viewBox="0 0 63.94 63.939"><defs>
+<style>.aWrong{fill:#ff0404;}.bWrong{filter:url(#a);}</style>
+<filter id="a" x="0" y="0" width="63.94" height="63.939" filterUnits="userSpaceOnUse">
+<feOffset dy="3" input="SourceAlpha"/><feGaussianBlur stdDeviation="3" result="b"/>
+<feFlood flood-opacity="0.161"/><feComposite operator="in" in2="b"/>
+<feComposite in="SourceGraphic"/></filter></defs>
+<g class="bWrong" transform="matrix(1, 0, 0, 1, 0, 0)">
+<path class="aWrong" d="M45.94,2.7,25.668,22.971,45.94,43.243l-2.7,2.7L22.97,
+25.669,2.7,45.94,0,43.243,20.272,22.971,0,2.7,2.7,0,22.97,20.273,43.242,0Z" 
+transform="translate(9 6)"/></g></svg>

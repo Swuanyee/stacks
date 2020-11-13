@@ -1,0 +1,86 @@
+#frontWhite {
+	display: grid;
+	width: 100%;
+	height: 60%;
+	grid-template-rows: 1fr 1fr;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#userInfo{
+	grid-row: 1;
+	display: grid;
+	width: 100%;
+	grid-template-row: 1fr 1fr 1fr;
+	grid-gap: 1vh;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#userName{
+	grid-row: 1;
+}
+
+#userName{
+	grid-row: 2;
+}
+
+#userName{
+	grid-row: 3;
+}
+
+
+.profileSVG {
+  fill: green;
+}
+
+#profile_logout_form_container {
+	height: 30vh;
+	width: 100%;
+	grid-row: 2;
+}
+
+.profile_buttons {
+  background-color: #e85d04;
+  color: #ffffff;
+  font-family: "Trebuchet MS";
+  font-size: 20px;
+  height: 51px;
+  width: 291px;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  margin-bottom: 4vh;
+}
+
+.profile_buttons:hover {
+  background-color: #faa307;
+}
+
+.profile_buttons:active {
+  background-color: #faa307;
+  box-shadow: 0 5px #666;
+  transform: translateY(-4px)
+}
+
+
+#profile_bulk_user{
+}
+
+p {
+}
+
+/*
+
+@media (min-width: 750px) {
+  #logout-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5vh;
+  }
+}
+*/

@@ -1,0 +1,31 @@
+{% extends "basedashboard.html" %}
+{% load static %}
+{% load cards_extra %}
+{% block style %}
+ <link href='{% static "/css/logout.css" %}' rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div id='userInfo'>
+	<div id='user_name'>{{full_name}}</div>
+	<div id='user_account'>{{profile}}</div>
+	<div id='user_name'>{{user.email}}</div>
+</div>
+<div id='profile_logout_form_container'>
+        <form id="profile_logout_form" method='POST' action="{% url 'account_logout' %}">
+		{% csrf_token %}
+		<input type="submit" class='profile_buttons' id='profile_logout' value="Logout">
+	</form>
+	<div id='change_password'>
+		<a href="{% url 'change_password' %}" id="change_password">
+		<input type="submit" class='profile_buttons' id='profile_logout' value="Change Password">
+	</a>
+	</div>
+	{% if profile == "Teacher Account" %}
+	<div id='profile_bulk_user'>
+		<a href="{% url 'add_users' %}" id="profile_logout_form">
+		<input type="submit" class='profile_buttons' id='profile_logout' value="Add Users">
+	</a>
+	</div>
+</div>
+{% endif %}
+{% endblock %}

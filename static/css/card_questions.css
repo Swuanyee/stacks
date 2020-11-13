@@ -1,0 +1,231 @@
+#frontWhite {
+  display: grid;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: 3fr 1fr;
+  grid-gap: 4vh;
+  justify-content: center;
+  align-items: start;
+}
+
+#title,
+#nav {
+  z-index: 1;
+}
+
+#delete_confirmation {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#qns_list {
+  display: grid;
+  grid-row: 1;
+  overflow-y: scroll;
+}
+
+.cardHolder {
+  height: 70.8vh;
+  width: 83.2vw;
+  border-radius: 10px;
+  z-index: 3;
+  box-shadow: 0px 1px 1px;
+  text-align: center;
+  background-color: #faffeb;
+  opacity: 0.9;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+.side_info{
+  grid-row: 2;
+}
+
+.stats_btn {
+  outline: none;
+  color: #ffffff;
+  background-color: #E85D05;
+  width: 40%;
+  height: 30px;
+}
+
+#delete_btn {
+  background-color: #f32013;
+}
+
+.qns {
+  margin-bottom: 4vh;
+  margin-top: 2vh;
+  margin-left: 2vw;
+  box-shadow: 0px 1px 1px;
+  padding: 1vh;
+  width: 90%;
+  background-color: #e85020;
+}
+
+p {
+  font-family: Trebuchet MS;
+  font-size: 15px;
+  color: #0d1030;
+}
+
+a {
+  color: #0d1030;
+  text-decoration: none;
+  outline: none;
+}
+
+#no,
+#yes {
+  margin-bottom: 2vh;
+  box-shadow: none;
+}
+
+button {
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+}
+button::active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+button::focus {
+  box-shadow: none;
+}
+
+.yes,
+.no {
+  width: 35vw;
+  height: 6vh;
+  border-radius: 50px;
+  box-shadow: none;
+}
+
+.yes {
+  background-color: #f32013;
+  color: #ffffff;
+}
+
+.no {
+  background-color: #00ff00;
+}
+
+.desktop {
+	display: none;
+}
+
+@media (min-width: 750px) {
+  #frontWhite {
+    display: grid;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 4vh;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .cardHolder {
+    grid-column: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 76vh;
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+  }
+
+  .side_info{
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    height: 50vh;
+    width: 35vw;
+    margin-top: 15vh;
+    grid-template-rows: 2fr 1fr;
+  }
+
+  .delete_deck {
+	  grid-row: 2;
+  }
+
+  .desktop {
+	  display: grid;
+  }
+
+  .deck_availability {
+	  display: grid;
+	  justify-content: center;
+	  align-items: center;
+  }
+
+  .availability {
+	  grid-row: 1;
+}
+
+#change_profile {
+	display: grid;
+	grid-template-rows: 4vh 4vh 4vh 4vh;
+	height: 100%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.title {
+	grid-row: 1;
+}
+
+.subject {
+	grid-row: 2;
+}
+
+.choices {
+	grid-row: 3;
+	height: 30px;
+}
+
+#submit_profile {
+	grid-row: 4;
+	margin-left: 1vw;
+}
+
+input {
+	width: 190px;
+	height: 30px;
+}
+
+.stats_btn {
+	width: 190px;
+	height: 30px;
+}
+
+.no, .yes {
+	width: 190px;
+	height: 30px;
+}
+
+.delete_deck {
+	margin-bottom: 25vh;
+}
+
+}

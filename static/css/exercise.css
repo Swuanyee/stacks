@@ -1,0 +1,157 @@
+#frontWhite{
+    display: flex;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.browserSVG {
+	fill: blue;
+}
+
+#title, #nav {
+	z-index: 1;
+}
+
+.cardHolder{
+	position: absolute;
+	height: 70.8vh;
+	width: 83.2vw;
+	border-radius: 10px;
+	z-index: 3;
+	visibility: hidden;
+	box-shadow: 0px 3px 3px;
+}
+
+.separator{
+	position: absolute;
+	height: 70.8vh;
+	width: 83.2vw;
+	border-radius: 10px;
+	perspective: 1000px;
+}
+
+.cardFlip{
+	position: relative;
+	height: 70.8vh;
+	width: 83.2vw;
+	border-radius: 10px;
+	/*box-shadow: 0px 1px 1px;*/
+	transition: transform 1s;
+	transform-style: preserve-3d;
+}
+
+div[id*='card_'] {
+	transform: rotateY(0deg);
+}
+
+.exerciseCard {
+	display: grid;
+	grid-templates-row: 1fr 2fr 1fr;
+}
+
+
+.question{
+	grid-row: 2;
+}
+
+.exerciseCard,.exerciseCardBack{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	border-radius: 10px;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+}
+
+.exerciseCardBack{
+	display: grid;
+	grid-templates-row: 1fr 1fr 3fr 1fr;
+	justify-content: center;
+	transform: rotateY(180deg);
+}
+
+.answerText {
+	grid-row: 2;
+	margin-left: 4vw;
+	width: 90%;
+}
+
+.questionImage {
+	grid-row: 3;
+	margin-left: 4vw;
+	width: 90%;
+	height: 65%;
+}
+
+.answerImage{
+	grid-row: 3;
+	margin-left: 4vw;
+	width: 90%;
+	height: 65%;
+}
+
+img{
+	max-height: 100%;
+	max-width: 100%;
+	box-shadow: 0px 3px 6px;
+	border-radius: 10px;
+}
+
+.swipe{
+	position: absolute;
+	top: 73vh;
+	display: grid;
+	grid-column:50px 50px;
+	grid-gap: 60px;
+	z-index: 1;
+
+}
+.wrong{
+	grid-column: 1;
+	fill:#ff0404;
+}
+.correct{ grid-column: 2; fill:#fAA307;
+}
+
+@media(min-width: 750px) {
+.cardHolder{
+	height: 55vh;
+	width: 50vw;
+	position: absolute;
+	bottom: 15vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 3;
+}
+
+.separator{
+	height: 55vh;
+	width: 50vw;
+	position:absolute;
+}
+
+.cardFlip{
+	height: 55vh;
+	width: 50vw;
+}
+
+.exerciseCard,.exerciseCardBack{
+	height: 55vh;
+	width: 50vw;
+}
+
+.swipe{
+	position: absolute;
+	top: 65vh;
+	grid-gap: 100px;
+}
+}

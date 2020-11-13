@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  #registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .registrationInput{
+    height: 40px;
+    width: 190px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 3px 6px;
+    font-size: 15px;
+    font-family: Trebuchet MS;
+    text-align: center;
+    outline: none;
+    margin-bottom: -2vh;
+  }
+
+  .registrationInput:focus::placeholder{
+    color: transparent;
+  }
+
+  #register-btn {
+    background-color: #E85D04;
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+    height: 40px;
+    width: 190px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+  }
+  
+  #register-btn:hover {
+    background-color: #faa307;
+  }
+  
+  #register-btn:active {
+    background-color: #faa307;
+    box-shadow: 0 5px #666;
+    transform: translateY(-4px);
+  }
+  
+  .registrationInput:focus::placeholder{
+    color: transparent;
+  }
+
+  @media (min-width: 750px) {
+  .registrationInput{
+    height: 51px;
+    width: 291px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0px 3px 6px;
+    font-size: 15px;
+    font-family: Trebuchet MS;
+    text-align: center;
+    outline: none;
+    margin-bottom: -2vh;
+  }
+
+  #register-btn {
+    background-color: #E85D04;
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+    height: 51px;
+    width: 291px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+  }
+
+  }
+
+</style>
+
+<div id="frontWhite">
+    <form id="registration-form" method="POST">
+        {{ form.as_p }}
+        {% csrf_token %}
+      <input id="register-btn" type="submit" value="Register"><br>
+      {% comment %}
+      <input type="hidden" name="next" />
+      This above code was removed as it was creating weird url when 
+      attached with url. To be corrected at a less time sensitive
+      phase.
+      {% endcomment %}
+      </form>
+    </div>
+
+{% endblock %}

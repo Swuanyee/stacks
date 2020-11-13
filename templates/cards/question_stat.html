@@ -1,0 +1,55 @@
+{% extends 'basedashboard.html' %} 
+{% load cards_extra %}
+{% load static %}
+{% block style %}
+<link href='{% static "/css/question_stat.css" %}' rel="stylesheet" />
+{% endblock %}
+{% block content %}
+<div class="cardHolder" id="delete_confirmation">
+	<p>
+	Are you sure you want to delete this card?</br>
+	This action is <b>irreversible</b>.
+	</p>
+	<div id="confirmation_buttons">
+		<div id='no' onclick=reload_page()>
+			<button class='no'>
+			Do Not Delete	
+			</button>
+		</div>
+		<div id='yes' onclick=delete_deck()>
+			<button class='yes'>
+			Delete	
+			</button>
+		</div>
+	</div>
+</div>
+<div class="cardHolder" id="qns_list">
+<form class="form" enctype="multipart/form-data" action="" method="POST">
+{% csrf_token %}
+	  {{form}}
+	      <div class="answerDisplay">
+		      {% if question.answerImage %}
+		      <img src="/media/{{question.answerImage}}">
+		      {% endif %}
+      </div>
+	<div class='modify'>
+		<input type="submit" class='modify_btn' id='modify_btn' value="Modify" />
+	</div>
+</form>
+</div>
+<div class='back'>
+	<button class='back_btn' id='back_btn' onclick=back_page()>Back</button>
+</div>
+<div class='delete_deck'>
+	<button class='delete_btn' id='delete_btn' onclick=delete_page()>Delete</button>
+</div>
+<script>
+function delete_deck() {
+	window.location="{% url 'delete_card' deck.id question.id %}"
+};
+function back_page() {
+	window.location="{% url 'card_stats' deck.id %}"
+};
+</script>
+<script src='{% static "/js/question_stat.js" %}'></script>
+{% endblock %}
