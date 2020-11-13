@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'stacks.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shuffle2',
+        'NAME': 'stack',
         'USER': 'projectadmin',
         'PASSWORD': 'admin',
         'HOST': 'localhost',
